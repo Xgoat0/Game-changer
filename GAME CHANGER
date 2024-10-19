@@ -1,0 +1,69 @@
+// Variables used by Scriptable.
+// These must be at the very top of the file. Do not edit.
+// icon-color: deep-gray; icon-glyph: grin-tongue-squint;
+async function argsPrompt(message, isSecure) {
+  let prompt = new Alert();
+  prompt.message = message;
+  prompt.addTextField(isSecure ? "" : "VIP 𝚁𝙴𝙶𝙴𝙳IT | KIFIN 𝙸𝙾𝚂", "");
+  prompt.addAction("OK");
+  await prompt.presentAlert();
+  return prompt.textFieldValue(0);
+}3
+widget = new ListWidget();
+let backgroundImage = await loadImage("https://imgur.com/pl3nEzy.jpg");
+widget.backgroundImage = backgroundImage;
+widget.setPadding(0, 0, 0, 0);
+
+title = widget.addText("           VIP 𝐑𝐄𝐆𝐄𝐃𝐈𝐓 𝐕𝟔 | KIFIN 𝐈𝐎𝐒");
+title.font = Font.boldSystemFont(17);
+title.textColor = Color.red();
+
+widget.addSpacer();
+
+let stack1 = widget.addStack();
+stack1.layoutHorizontally();
+stack1.addSpacer();
+let mofscrButton = stack1.addText("   𝐀𝐍𝐓𝐈𝐁𝐀𝐍     ");
+mofscrButton.textColor = Color.cyan();
+mofscrButton.url = "scriptable:///run/filePicker?path=/var/mobile/Library/Plus/YjAzNmYxYTZkYjdlYTY0OTFjNjMyZTgxNTQyNWE2MjJlNDE3MTg2OA%3D%3D.txt";
+
+let frigameButton = stack1.addText("       𝐀𝐍𝐓𝐈𝐁𝐋𝐀𝐂𝐊    ");
+frigameButton.textColor = Color.cyan();
+frigameButton.url = "scriptable:///run/filePicker?path=/var/mobile/Library/Plus/YjAzNmYxYTZkYjdlYTY0OTFjNjMyZTgxNTQyNWE2MjJlNDE3MTg2OA%3D%3D.txt";
+
+
+stack1.addSpacer();
+
+widget.addSpacer();
+
+let stack2 = widget.addStack();
+stack2.layoutHorizontally();
+stack2.addSpacer();
+
+let powerxButton = stack2.addText("𝐒𝐄𝐍𝐒𝐈 𝐔𝐋𝐓𝐑𝐀    ");
+powerxButton.textColor = Color.cyan();
+powerxButton.url = "scriptable:///run/filePicker?path=/var/mobile/Library/Plus/NTI2MzljMTg2NmViZTA1OGM2ODEyOTgwYzI2NjEwNTI1YWIxMmVkNjQwOGZhMzI3ZjgwNTg4OTZm%0D%0AN2Q0ODczYQ%3D%3D";
+
+let fixlagButton = stack2.addText("      𝐀𝐈𝐌𝐁𝐎𝐓    ");
+fixlagButton.textColor = Color.cyan();
+fixlagButton.url = "scriptable:///run/filePicker?path=/var/mobile/Library/Plus/YmVhZTE0ZDQ0MDBjNzM3MTAzYjgxZjU4YWU4YjFlNDc%3D.txt";
+
+stack2.addSpacer();
+
+widget.addSpacer();
+
+let exitButton = widget.addText(".      ❗️𝐏𝐑𝐄𝐒𝐒 𝐇𝐄𝐑𝐄 𝐓𝐎 𝐒𝐔𝐁𝐒𝐂𝐑𝐈𝐁𝐄 𝐎𝐍 𝐘𝐓❗️");
+exitButton.textColor = Color.red();
+exitButton.url = "https://youtube.com/@kifinyoutube?si=IJn7kb3ATX4V66oA";
+
+
+exitButton.lineLimit = 1;
+
+widget.presentMedium();
+
+Script.complete();
+
+async function loadImage(url) {
+  const request = new Request(url);
+  return await request.loadImage();
+}
